@@ -1,3 +1,116 @@
+`feat:` là một **prefix trong commit message** theo chuẩn **Conventional Commits**.
+Chuẩn này quy định cách viết commit để **dễ đọc, dễ tự động tạo changelog và versioning**.
+
+---
+
+# 1️⃣ `feat:` nghĩa là gì
+
+`feat` = **feature**
+
+Nó dùng khi commit **thêm một tính năng mới** vào project.
+
+Ví dụ:
+
+```bash
+git commit -m "feat: add image generation endpoint"
+```
+
+Nghĩa là:
+
+> Thêm feature mới: endpoint tạo ảnh.
+
+---
+
+# 2️⃣ Vì sao template PR / contribution hay dùng
+
+Nhiều project (đặc biệt open source) dùng chuẩn **Conventional Commits** vì nó giúp:
+
+* tự động **generate changelog**
+* tự động **bump version**
+* commit history **dễ đọc**
+* dùng được với tool CI/CD
+
+Ví dụ tool phổ biến:
+
+* semantic-release
+* commitlint
+* standard-version
+
+---
+
+# 3️⃣ Các prefix commit phổ biến
+
+| Prefix      | Ý nghĩa                             |
+| ----------- | ----------------------------------- |
+| `feat:`     | thêm feature                        |
+| `fix:`      | sửa bug                             |
+| `docs:`     | thay đổi documentation              |
+| `style:`    | format code (không ảnh hưởng logic) |
+| `refactor:` | refactor code                       |
+| `perf:`     | cải thiện performance               |
+| `test:`     | thêm/sửa test                       |
+| `chore:`    | việc lặt vặt (build, deps...)       |
+
+---
+
+# 4️⃣ Ví dụ commit history chuẩn
+
+```bash
+feat: add image generation API
+fix: resolve GPU memory leak
+docs: update installation guide
+refactor: simplify pipeline loader
+chore: upgrade dependencies
+```
+
+Nhìn vào là hiểu ngay project đã thay đổi gì.
+
+---
+
+# 5️⃣ Commit nâng cao hơn (scope)
+
+Có thể thêm **scope**:
+
+```bash
+feat(api): add image generation endpoint
+fix(auth): handle expired token
+docs(readme): update setup guide
+```
+
+Format chuẩn:
+
+```text
+type(scope): description
+```
+
+---
+
+# 6️⃣ Ví dụ thực tế cho project AI image generator của bạn
+
+```bash
+feat(api): add image generation endpoint
+feat(model): support SDXL turbo
+fix(gpu): prevent cuda memory leak
+docs(readme): add setup instructions
+```
+
+---
+
+💡 **Fun fact:**
+Hơn **70% open source repo lớn** hiện dùng chuẩn này, ví dụ:
+
+* Angular (nơi chuẩn Conventional Commits bắt nguồn)
+* Vercel
+* Hugging Face
+
+---
+
+Nếu bạn muốn, tôi có thể chỉ thêm một thứ **rất hay mà nhiều dev chưa biết**:
+
+👉 cách viết commit để **tự động bump version + generate changelog trên GitHub release chỉ bằng commit message**.
+
+---
+
 Cách phổ biến nhất để **tự động bump version + generate changelog từ commit message** là dùng chuẩn **Conventional Commits** cùng với tool như **semantic-release**.
 
 Dưới đây là workflow chuẩn mà rất nhiều project open-source dùng.
